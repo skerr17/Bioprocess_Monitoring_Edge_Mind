@@ -1,7 +1,7 @@
 [project]
 name = "bioprocess-monitoring-edge-mind"
 version = "0.1.0"
-description = "Add your description here"
+description = "Local SLM intelligence layer for pharma bioprocess monitoring"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
