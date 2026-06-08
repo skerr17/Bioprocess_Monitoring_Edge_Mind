@@ -14,7 +14,7 @@ from scipy import stats
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 import os
-from mcp.server.fastmcp import FastMCP
+from fastmcp import FastMCP
 
 # Constants (potentially could be moved to a config file or revisited)
 PHASE_BOUNDARIES = {
@@ -49,9 +49,9 @@ PHASE_RANGE_VARS = [
 ]
 
 N_PCS = 3
-import os
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_PATH = os.path.join(BASE_DIR, "data", "batches-subset-1-10.csv")
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_PATH = os.path.join(BASE_DIR, "data/indpensim_v3", "batches-subset-1-10.csv")
 
 
 # Load and prepare data
