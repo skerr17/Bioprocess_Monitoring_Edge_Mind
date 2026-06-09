@@ -280,5 +280,16 @@ async def get_correlations(top_n: int = 10) -> str:
     }, indent=2)
 
 
+
+@app.tool()
+async def get_latest_time(batch_id: int) -> str:
+    """Get the most recent time point recorded for a batch."""
+    batch_mask = df_batch_1_10["batch_id"] == batch_id
+    if not batch_mask.any():
+        return json.dumps({"error": f"Batch {batch_id} not found."})
+    latest = float(df_batch_1_10[batch_mask]["Time (h)"].max())
+    return json.dumps({"batch_id": batch_id, "latest_time_h": latest})
+
+
 if __name__ == "__main__":
     app.run()
